@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/splash_view"
+    android:background="#005950">
+
+    <!-- Travellly Logo -->
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="Travelly Logo"
+        android:src="@drawable/ic_travelly_logo"
+        />
+
+    <!-- Airplane Icon -->
+    <ImageView
+        android:id="@+id/airplane"
+        android:layout_width="311dp"
+        android:layout_height="52dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="640dp"
+        android:contentDescription="Airplane_Icon"
+        android:src="@drawable/ic_airline_logo" />
+
+</RelativeLayout>

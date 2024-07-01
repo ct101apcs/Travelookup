@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Travelookup</string>
+    <string name="swap_button">Swap</string>
+    <string name="search_button">Search</string>
+    <string name="passenger_icon">Passenger</string>
+    <string name="child_icon">Child</string>
+    <string name="pet_icon">Pet</string>
+    <string name="luggage_icon">Luggage</string>
+    <string name="plane_icon">Plane</string>
+    <string name="train_icon">Train</string>
+    <string name="bus_icon">Bus</string>
+    <string name="ship_icon">Ship</string>
+</resources>
