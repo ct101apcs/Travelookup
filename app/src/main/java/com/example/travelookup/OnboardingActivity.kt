@@ -1,4 +1,7 @@
+package com.example.travelookup
+
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,23 +15,31 @@ import com.example.travelookup.R
 
 class OnboardingActivity : AppCompatActivity() {
     private var viewPagerAdapter: OnboardingAdapter? = null
+    private lateinit var sharedPref: SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.onboarding)
         viewPagerAdapter = OnboardingAdapter(supportFragmentManager)
-        val view_pager = findViewById<androidx.viewpager.widget.ViewPager>(R.id.view_pager)
+        val viewpager = findViewById<androidx.viewpager.widget.ViewPager>(R.id.view_pager)
         val indicator = findViewById<com.tbuonomo.viewpagerdotsindicator.DotsIndicator>(R.id.indicator)
 
-        view_pager.adapter = viewPagerAdapter
-        indicator.setViewPager(view_pager)
+        viewpager.adapter = viewPagerAdapter
+        indicator.setViewPager(viewpager)
+
+        sharedPref = getSharedPreferences(AppUtils.USERS_SHARED_PREF, AppUtils.PRIVATE_MODE)
     }
 
     override fun onStart() {
         super.onStart()
-        val nextButton = findViewById<android.widget.Button>(R.id.nextButton)
+        val nextButton = findViewById<android.widget.Button>(R.id.getStarted)
         nextButton.setOnClickListener {
-//            startActivity(Intent(this, InitUserInfoActivity::class.java))
+            val editor = sharedPref.edit()
+            editor.putBoolean(AppUtils.FIRST_RUN_KEY, false)
+            editor.apply()
+
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
     }
@@ -73,5 +84,7 @@ class OnboardingActivity : AppCompatActivity() {
             return inflater.inflate(R.layout.onboarding_three, container, false)
         }
     }
+
+
 }
 

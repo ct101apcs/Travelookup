@@ -37,8 +37,8 @@
         android:layout_width="343dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/nextButton"
-        android:text="Next"
+        android:id="@+id/getStarted"
+        android:text="Get Started"
         style="@style/DefaultSubmitButton" />
 
 </LinearLayout>
