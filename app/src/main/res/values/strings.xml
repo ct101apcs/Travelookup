@@ -10,4 +10,10 @@
     <string name="train_icon">Train</string>
     <string name="bus_icon">Bus</string>
     <string name="ship_icon">Ship</string>
+    <string name="trip_icon">Trip</string>
+    <string name="hotel_icon">Hotel</string>
+    <string name="transport_icon">Transport</string>
+    <string name="event_icon">Event</string>
+    <string name="get_started">Get Started</string>
+
 </resources>

@@ -1,15 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="match_parent"
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:max="2"
-        android:progress="2"/>
+        app:dotsSpacing="2dp"
+        app:dotsSize="12dp"
+        android:id="@+id/indicator"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp">
+    </com.tbuonomo.viewpagerdotsindicator.DotsIndicator>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="388dp"
+        android:layout_marginTop="50dp">
+    </androidx.viewpager.widget.ViewPager>
+
+    <TextView
+        style="@style/OnboardingTitle"
+        android:id="@+id/onboardingTitle"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Booking tickets for planes and trains" />
+
+    <Button
+        android:layout_width="343dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/nextButton"
+        android:text="Next"
+        style="@style/DefaultSubmitButton" />
 
 </LinearLayout>

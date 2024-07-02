@@ -15,10 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Transport Booking"
-            android:textSize="24sp"
-            android:textStyle="bold"
+            style="@style/DefaultTitle"
             android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
             android:layout_marginBottom="16dp" />
 
         <!-- From and To Fields -->
@@ -33,8 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="From"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                style="@style/DefaultSubtitle" />
 
             <!-- From Location -->
             <TextView
@@ -54,8 +51,7 @@
                 android:layout_below="@id/fromLocation"
                 android:layout_marginTop="16dp"
                 android:text="To"
-                android:textStyle="bold"
-                android:textSize="18sp" />
+                style="@style/DefaultSubtitle" />
 
             <!-- To Location -->
             <TextView
@@ -100,6 +96,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Departure"
+                    style="@style/DefaultSubtitle"
                     android:textStyle="bold" />
 
                 <EditText
@@ -119,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Return"
-                    android:textStyle="bold" />
+                    style="@style/DefaultSubtitle"/>
 
                 <EditText
                     android:layout_width="match_parent"
@@ -134,7 +131,7 @@
             android:layout_height="wrap_content"
             android:text="Passenger and Luggage"
             android:layout_marginStart="8dp"
-            android:textStyle="bold" />
+            style="@style/DefaultSubtitle" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -200,7 +197,7 @@
             android:layout_height="wrap_content"
             android:text="Class"
             android:layout_marginStart="8dp"
-            android:textStyle="bold" />
+            style="@style/DefaultSubtitle"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -223,7 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Business"
-                    android:layout_marginStart="168dp" />
+                    android:layout_marginStart="144dp" />
             </RadioGroup>
         </LinearLayout>
 
@@ -233,7 +230,7 @@
             android:layout_height="wrap_content"
             android:text="Transport"
             android:layout_marginStart="8dp"
-            android:textStyle="bold" />
+            style="@style/DefaultSubtitle" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -242,39 +239,48 @@
             android:gravity="center"
             android:padding="8dp">
 
-            <ImageView
+            <ImageButton
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_plane"
                 android:contentDescription="@string/plane_icon"
+                android:background="?android:attr/selectableItemBackground"
+                android:scaleType="centerInside"
                 android:layout_margin="8dp" />
 
-            <ImageView
+            <ImageButton
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_ship"
                 android:contentDescription="@string/ship_icon"
+                android:background="?android:attr/selectableItemBackground"
+                android:scaleType="centerInside"
                 android:layout_margin="8dp" />
 
-            <ImageView
+            <ImageButton
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_train"
                 android:contentDescription="@string/train_icon"
+                android:background="?android:attr/selectableItemBackground"
+                android:scaleType="centerInside"
                 android:layout_margin="8dp" />
 
-            <ImageView
+            <ImageButton
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_bus"
                 android:contentDescription="@string/bus_icon"
+                android:background="?android:attr/selectableItemBackground"
+                android:scaleType="centerInside"
                 android:layout_margin="8dp" />
         </LinearLayout>
 
         <!-- Search Button -->
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="343dp"
             android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
             android:text="Search"
             style="@style/DefaultSubmitButton" />
     </LinearLayout>

@@ -44,11 +44,13 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-
-
+//    releaseImplementation("com.tbuonomo.andrui:viewpagerdotsindicator:4.2")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
 
+dependencies {
+    implementation("com.tbuonomo:dotsindicator:5.0")
 }
