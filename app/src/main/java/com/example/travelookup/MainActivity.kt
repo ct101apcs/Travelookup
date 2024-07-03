@@ -28,13 +28,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 //        setContentView(R.layout.activity_main)
-//
-//        sharedPref = getSharedPreferences(AppUtils.USERS_SHARED_PREF, AppUtils.PRIVATE_MODE)
-//
-//        if (sharedPref.getBoolean(AppUtils.FIRST_RUN_KEY, true)) {
-//            startActivity(Intent(this, OnboardingActivity::class.java))
-//            finish()
-//        }
+
+        sharedPref = getSharedPreferences(AppUtils.USERS_SHARED_PREF, AppUtils.PRIVATE_MODE)
+
+        if (sharedPref.getBoolean(AppUtils.FIRST_RUN_KEY, true)) {
+            startActivity(Intent(this, OnboardingActivity::class.java))
+            finish()
+        }
     }
 
     @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
