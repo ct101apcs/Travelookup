@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name="OnboardingActivity" />
+        <activity android:name=".PersonalInfoEditActivity" />
     </application>
 
 </manifest>
