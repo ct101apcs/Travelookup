@@ -34,4 +34,9 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name = "avatar">
+        <item name="cornerSize">12.5%</item>
+        <item name="android:color">@color/white</item>
+    </style>
+
 </resources>

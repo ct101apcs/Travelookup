@@ -59,6 +59,7 @@ dependencies {
 
 dependencies {
     implementation("com.tbuonomo:dotsindicator:5.0")
+//    implementation("com.github.dhaval2404:imagepicker-support:1.7.1")
 }
 
 dependencies{

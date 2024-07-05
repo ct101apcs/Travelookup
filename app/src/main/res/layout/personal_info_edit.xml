@@ -36,20 +36,39 @@
         </RelativeLayout>
 
         <!-- Avatar -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="24dp"
-            android:layout_gravity="center_horizontal"
-            app:cardCornerRadius="70dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/profile_avatar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:background="@color/white"
+                android:padding="8dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_profile_avatar" />
-        </androidx.cardview.widget.CardView>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/avatar"
+                app:srcCompat="@drawable/baseline_person_24" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/change_avatar_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:layout_constraintBottom_toBottomOf="@id/profile_avatar"
+                app:layout_constraintEnd_toEndOf="@id/profile_avatar"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:srcCompat="@drawable/baseline_add_a_photo_24"
+                android:scaleType="centerInside"
+                android:clickable="true"
+                android:focusable="true">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -60,7 +79,7 @@
             android:textSize="24sp"
             android:text="Name">
         </TextView>
-        
+
         <EditText
             android:id="@+id/first_name_edit_text"
             android:layout_width="343dp"
@@ -112,5 +131,6 @@
             android:layout_gravity="center_horizontal"
             android:text="Save Changes"
             style="@style/DefaultSubmitButton" />
+
     </LinearLayout>
 </ScrollView>
