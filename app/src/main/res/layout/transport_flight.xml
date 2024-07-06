@@ -9,20 +9,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:orientation="vertical">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:padding="4dp">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Flights"
                 style="@style/DefaultTitle"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="16dp" />
+                android:layout_gravity="center_horizontal" />
 
             <ImageButton
                 android:layout_width="20dp"
@@ -33,15 +33,18 @@
         </RelativeLayout>
 
         <com.sahana.horizontalcalendar.HorizontalCalendar
-            android:id="@+id/horizontalCalendar"
+            android:id="@+id/horizontal_calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             app:numOfDays="90"
-            app:setTextColor="@color/white"
+            app:setBgColor="@color/transparent"
+            app:setSelectedBgColor="@color/blue_sky"
+            app:setTextColor="@color/black"
             app:setSelectedTextColor="@color/white"
-            app:setWeekTextSize="13sp"
-            app:setMonthTextSize="17sp" />
+            app:setWeekTextSize="14sp"
+            app:setMonthTextSize="15sp"
+            app:setDateTextSize="20sp"
+            app:setMonthColor="@color/red"/>
 
     </LinearLayout>
 </ScrollView>
