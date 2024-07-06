@@ -24,6 +24,8 @@
         </activity>
         <activity android:name="OnboardingActivity" />
         <activity android:name=".PersonalInfoEditActivity" />
+        <activity android:name=".TransportBookingActivity"/>
+        <activity android:name=".FlightBookingActivity"/>
     </application>
 
 </manifest>

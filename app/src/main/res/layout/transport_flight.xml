@@ -32,17 +32,16 @@
                 android:background="?android:attr/selectableItemBackground" />
         </RelativeLayout>
 
-        <com.google.android.material.appbar.AppBarLayout
+        <com.sahana.horizontalcalendar.HorizontalCalendar
+            android:id="@+id/horizontalCalendar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-<!--            <c-->
-<!--                android:id="@+id/calendarView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:textColorSelected="#FFFF"/>-->
-
-        </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:numOfDays="90"
+            app:setTextColor="@color/white"
+            app:setSelectedTextColor="@color/white"
+            app:setWeekTextSize="13sp"
+            app:setMonthTextSize="17sp" />
 
     </LinearLayout>
 </ScrollView>

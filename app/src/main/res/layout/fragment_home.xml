@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/fragment_home_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -28,11 +28,11 @@
                 android:id="@+id/search_bar"
                 android:layout_width="343dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="8dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/search_background"
                 android:hint="Search"
-                android:padding="6dp"
-                android:background="@drawable/search_background" />
+                android:padding="6dp" />
 
             <ImageButton
                 android:id="@+id/searchButton"
@@ -86,11 +86,11 @@
                 android:id="@+id/transport_booking"
                 android:layout_width="60dp"
                 android:layout_height="82dp"
-                android:src="@drawable/ic_transport"
-                android:contentDescription="@string/transport_icon"
+                android:layout_margin="8dp"
                 android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/transport_icon"
                 android:scaleType="centerInside"
-                android:layout_margin="8dp" />
+                android:src="@drawable/ic_transport" />
 
             <ImageButton
                 android:id="@+id/event_booking"

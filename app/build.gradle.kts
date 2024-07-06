@@ -1,3 +1,5 @@
+import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.exclude
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -39,8 +41,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildToolsVersion = "34.0.0"
     ndkVersion = "26.3.11579264"
+
 }
 
 dependencies {
@@ -50,7 +54,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-//    releaseImplementation("com.tbuonomo.andrui:viewpagerdotsindicator:4.2")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -59,7 +62,8 @@ dependencies {
 
 dependencies {
     implementation("com.tbuonomo:dotsindicator:5.0")
-//    implementation("com.github.dhaval2404:imagepicker-support:1.7.1")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("io.github.b-sahana:horizontalcalendar:1.2.2")
 }
 
 dependencies{
@@ -86,4 +90,3 @@ dependencies {
     // Jetpack Compose Integration
     implementation("androidx.navigation:navigation-compose:$nav_version")
 }
-

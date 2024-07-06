@@ -278,6 +278,7 @@
 
         <!-- Search Button -->
         <Button
+            android:id="@+id/booking_search_button"
             android:layout_width="343dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
