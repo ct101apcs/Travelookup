@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         sharedPref = getSharedPreferences(AppUtils.USERS_SHARED_PREF, AppUtils.PRIVATE_MODE)
 
-        if (sharedPref.getBoolean(AppUtils.FIRST_RUN_KEY, true)) {
+        if (sharedPref.getBoolean(AppUtils.FIRST_RUN_KEY, false)) {
             startActivity(Intent(this, OnboardingActivity::class.java))
             finish()
         }

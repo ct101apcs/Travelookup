@@ -26,6 +26,7 @@
         <activity android:name=".PersonalInfoEditActivity" />
         <activity android:name=".TransportBookingActivity"/>
         <activity android:name=".FlightBookingActivity"/>
+        <activity android:name=".PersonalInfoInitActivity"/>
     </application>
 
 </manifest>

@@ -1,14 +1,14 @@
 package com.example.travelookup
 
-import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -20,13 +20,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.snackbar.Snackbar
 
-class PersonalInfoEditActivity : AppCompatActivity() {
+class PersonalInfoInitActivity : AppCompatActivity(){
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
     private var selectedImageUri: Uri? = null
     private lateinit var profileAvatar: ShapeableImageView
     private lateinit var changeAvatarButton: FloatingActionButton
     private lateinit var saveButton: Button
-    private lateinit var backButton: ImageButton
     private lateinit var fullName: TextView
 
     private lateinit var sharedPref: SharedPreferences
@@ -35,35 +34,28 @@ class PersonalInfoEditActivity : AppCompatActivity() {
     private var phone: String = ""
     private var email: String = ""
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.personal_info_edit)
+        setContentView(R.layout.personal_info_init)
 
-        profileAvatar = findViewById(R.id.edit_profile_avatar)
-        changeAvatarButton = findViewById(R.id.change_avatar_button)
-        saveButton = findViewById(R.id.save_changes_button)
-        backButton = findViewById(R.id.edit_back_button)
-        fullName = findViewById(R.id.full_name)
+        profileAvatar = findViewById(R.id.init_profile_avatar)
+        changeAvatarButton = findViewById(R.id.add_avatar_button)
+        saveButton = findViewById(R.id.init_save_button)
+        fullName = findViewById(R.id.init_full_name)
 
-        val firstNameText = findViewById<EditText>(R.id.first_name_edit_text)
-        val lastNameText = findViewById<EditText>(R.id.last_name_edit_text)
-        val phoneText = findViewById<EditText>(R.id.phone_edit_text)
-        val emailText = findViewById<EditText>(R.id.email_edit_text)
+        val firstNameText : EditText = findViewById(R.id.init_first_name_edit_text)
+        val lastNameText : EditText = findViewById(R.id.init_last_name_edit_text)
+        val phoneText : EditText = findViewById(R.id.init_phone_edit_text)
+        val emailText : EditText = findViewById(R.id.init_email_edit_text)
 
         sharedPref = getSharedPreferences(AppUtils.USERS_SHARED_PREF, AppUtils.PRIVATE_MODE)
-
-        firstNameText.setText(sharedPref.getString(AppUtils.FIRST_NAME_KEY, ""))
-        lastNameText.setText(sharedPref.getString(AppUtils.LAST_NAME_KEY, ""))
-        phoneText.setText(sharedPref.getString(AppUtils.PHONE_KEY, ""))
-        emailText.setText(sharedPref.getString(AppUtils.EMAIL_KEY, ""))
-        selectedImageUri = Uri.parse(sharedPref.getString(AppUtils.PROFILE_AVATAR, ""))
-        Glide.with(this).load(sharedPref.getString(AppUtils.PROFILE_AVATAR, "")).apply(RequestOptions.centerCropTransform()).into(profileAvatar)
-
-        fullName.text = "${sharedPref.getString(AppUtils.FIRST_NAME_KEY, "")} ${sharedPref.getString(AppUtils.LAST_NAME_KEY, "")}"
+        firstName = sharedPref.getString(AppUtils.FIRST_NAME_KEY, "").toString()
+        lastName = sharedPref.getString(AppUtils.LAST_NAME_KEY, "").toString()
+        phone = sharedPref.getString(AppUtils.PHONE_KEY, "").toString()
+        email = sharedPref.getString(AppUtils.EMAIL_KEY, "").toString()
 
         imagePickerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
+            if (result.resultCode == AppCompatActivity.RESULT_OK) {
                 val data: Intent? = result.data
                 selectedImageUri = data?.data
                 if (selectedImageUri != null) {
@@ -100,18 +92,12 @@ class PersonalInfoEditActivity : AppCompatActivity() {
                     editor.putString(AppUtils.PROFILE_AVATAR, selectedImageUri.toString())
                     editor.apply()
 
-                    val intent = Intent(Intent.ACTION_PICK)
-                    intent.type = "image/*"
-                    imagePickerLauncher.launch(intent)
-
+                    fullName.text = "$firstName $lastName"
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }
             }
         }
 
-        backButton.setOnClickListener {
-            finish()
-        }
     }
 }

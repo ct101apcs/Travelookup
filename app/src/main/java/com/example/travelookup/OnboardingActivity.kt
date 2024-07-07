@@ -39,7 +39,7 @@ class OnboardingActivity : AppCompatActivity() {
             editor.putBoolean(AppUtils.FIRST_RUN_KEY, false)
             editor.apply()
 
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, PersonalInfoInitActivity::class.java))
             finish()
         }
     }
