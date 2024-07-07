@@ -64,6 +64,7 @@ dependencies {
     implementation("com.tbuonomo:dotsindicator:5.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("io.github.b-sahana:horizontalcalendar:1.2.2")
+    implementation("com.vipulasri:ticketview:1.1.2")
 }
 
 dependencies{

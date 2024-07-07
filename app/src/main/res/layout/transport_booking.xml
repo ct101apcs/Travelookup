@@ -11,13 +11,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Transport Booking"
-            style="@style/DefaultTitle"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/transport_booking_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transport Booking"
+                style="@style/DefaultTitle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <ImageButton
+                android:id="@+id/transport_back_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="Back Button"
+                android:background="?android:attr/selectableItemBackground" />
+        </RelativeLayout>
 
         <!-- From and To Fields -->
         <RelativeLayout
