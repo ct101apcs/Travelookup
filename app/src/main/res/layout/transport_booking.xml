@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    android:background="#F5F5F5"
+    tools:context=".TransportBookingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -49,14 +50,12 @@
                 style="@style/DefaultSubtitle" />
 
             <!-- From Location -->
-            <TextView
+            <AutoCompleteTextView
                 android:id="@+id/fromLocation"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fromText"
-                android:hint="New York (NYC)"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="16dp"
+                android:hint="Select or type"/>
 
             <!-- To Text -->
             <TextView
@@ -69,14 +68,12 @@
                 style="@style/DefaultSubtitle" />
 
             <!-- To Location -->
-            <TextView
+            <AutoCompleteTextView
                 android:id="@+id/toLocation"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/toText"
-                android:hint="London (LDN)"
-                android:textSize="18sp"
-                android:layout_marginTop="8dp" />
+                android:hint="Select or type"/>
 
             <!-- Swap Button -->
             <ImageButton
@@ -114,9 +111,12 @@
                     style="@style/DefaultSubtitle"
                     android:textStyle="bold" />
 
-                <EditText
+                <Button
+                    android:id="@+id/departureDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/black"
                     android:hint="Jun 02, 2022" />
             </LinearLayout>
 
@@ -133,9 +133,12 @@
                     android:text="Return"
                     style="@style/DefaultSubtitle"/>
 
-                <EditText
+                <Button
+                    android:id="@+id/returnDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:textColor="@color/black"
                     android:hint="Jun 12, 2022" />
             </LinearLayout>
         </LinearLayout>
@@ -162,21 +165,23 @@
                 android:layout_marginEnd="8dp" />
 
             <EditText
+                android:id="@+id/passengerCount"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="36dp"
                 android:hint="1" />
 
             <ImageView
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="36dp"
                 android:src="@drawable/ic_child"
                 android:contentDescription="@string/child_icon"
                 android:layout_marginStart="48dp"
                 android:layout_marginEnd="8dp" />
 
             <EditText
+                android:id="@+id/childCount"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="36dp"
                 android:hint="1" />
 
             <ImageView
@@ -188,8 +193,9 @@
                 android:layout_marginEnd="8dp" />
 
             <EditText
+                android:id="@+id/petCount"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="36dp"
                 android:hint="1" />
 
             <ImageView
@@ -201,8 +207,9 @@
                 android:layout_marginEnd="8dp" />
 
             <EditText
+                android:id="@+id/luggageCount"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="36dp"
                 android:hint="1" />
         </LinearLayout>
 
@@ -221,6 +228,7 @@
             android:padding="8dp">
 
             <RadioGroup
+                android:id="@+id/classSelection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -235,7 +243,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Business"
-                    android:layout_marginStart="144dp" />
+                    android:layout_marginStart="136dp" />
             </RadioGroup>
         </LinearLayout>
 
@@ -255,6 +263,7 @@
             android:padding="8dp">
 
             <ImageButton
+                android:id="@+id/plane_type"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_plane"
@@ -264,6 +273,7 @@
                 android:layout_margin="8dp" />
 
             <ImageButton
+                android:id="@+id/ship_type"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_ship"
@@ -273,6 +283,7 @@
                 android:layout_margin="8dp" />
 
             <ImageButton
+                android:id="@+id/train_type"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_train"
@@ -282,6 +293,7 @@
                 android:layout_margin="8dp" />
 
             <ImageButton
+                android:id="@+id/bus_type"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/ic_bus"

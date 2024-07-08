@@ -3,6 +3,7 @@ import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 android {
@@ -44,6 +45,13 @@ android {
 
     buildToolsVersion = "34.0.0"
     ndkVersion = "26.3.11579264"
+    sourceSets {
+        getByName("main") {
+            assets {
+                srcDirs("src\\main\\assets", "src\\main\\assets")
+            }
+        }
+    }
 
 }
 
@@ -58,6 +66,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("com.google.code.gson:gson:2.10.1")
 }
 
 dependencies {

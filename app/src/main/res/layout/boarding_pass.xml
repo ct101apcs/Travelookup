@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F5F5F5"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/boarding_pass_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Boarding Pass"
+                style="@style/DefaultTitle"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp" />
+
+            <ImageButton
+                android:id="@+id/boarding_pass_back_button"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="Back Button"
+                android:background="?android:attr/selectableItemBackground" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.vipulasri.ticketview.TicketView
+                android:id="@+id/boarding_pass_bg"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_gravity="center_horizontal"
+                app:ticketDividerPadding="0dp"
+                app:ticketDividerType="dash"
+                app:ticketElevation="14dp"
+                app:ticketOrientation="horizontal"
+                app:ticketScallopPositionPercent="90"
+                app:ticketScallopRadius="10dp"
+                app:ticketShowBorder="false"
+                app:ticketShowDivider="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </com.vipulasri.ticketview.TicketView>
+
+            <com.vipulasri.ticketview.TicketView
+                android:id="@+id/boarding_pass"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="230dp"
+                app:ticketDividerPadding="0dp"
+                app:ticketDividerType="dash"
+                app:ticketElevation="14dp"
+                app:ticketOrientation="horizontal"
+                app:ticketScallopPositionPercent="70"
+                app:ticketScallopRadius="10dp"
+                app:ticketShowBorder="false"
+                app:ticketShowDivider="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </com.vipulasri.ticketview.TicketView>
+            
+            <ImageView
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                app:srcCompat="@drawable/ic_boarding_pass"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
