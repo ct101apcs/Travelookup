@@ -25,6 +25,7 @@
                 android:layout_gravity="center_horizontal" />
 
             <ImageButton
+                android:id="@+id/flight_back_button"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_back_arrow"
@@ -46,6 +47,23 @@
             app:setDateTextSize="20sp"
             app:setMonthColor="@color/red"/>
 
+        <TextView
+            android:id="@+id/date_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textColor="@color/blue" />
+
+<!--        Flight list-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/flight_list_recycler_view"
+            android:padding="8dp"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:scrollbars="vertical" />
     </LinearLayout>
 </ScrollView>
 

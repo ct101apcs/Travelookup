@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.vipulasri.ticketview.TicketView
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/boarding_pass"
+        android:layout_gravity="center_horizontal"
+        app:ticketDividerPadding="0dp"
+        app:ticketDividerType="dash"
+        app:ticketElevation="14dp"
+        app:ticketOrientation="horizontal"
+        app:ticketScallopPositionPercent="50"
+        app:ticketScallopRadius="10dp"
+        app:ticketShowBorder="false"
+        app:ticketShowDivider="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </com.vipulasri.ticketview.TicketView>
+    
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_airway"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <TextView
+        android:id="@+id/original_airport_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="18dp"
+        style="@style/DefaultFlightDetailTitle"
+        android:text="NYC" />
+
+    <TextView
+        android:id="@+id/original_airport_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="18dp"
+        style="@style/DefaultFlightDetail"
+        android:text="New York"/>
+
+    <TextView
+        android:id="@+id/destination_airport_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="245dp"
+        style="@style/DefaultFlightDetailTitle"
+        android:text="LAX" />
+
+    <TextView
+        android:id="@+id/destination_airport_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="245dp"
+        style="@style/DefaultFlightDetail"
+        android:text="Los Angeles"/>
+
+    <TextView
+        android:id="@+id/flight_date_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="32dp"
+        style="@style/DefaultFlightDetailTitle"
+        android:text="Date" />
+
+    <TextView
+        android:id="@+id/flight_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="122dp"
+        android:layout_marginStart="24dp"
+        style="@style/DefaultFlightDetail"
+        android:text="08 Jul" />
+
+    <TextView
+        android:id="@+id/departure_time_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="82dp"
+        style="@style/DefaultFlightDetailTitle"
+        android:text="Departure" />
+
+    <TextView
+        android:id="@+id/departure_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="122dp"
+        android:layout_marginStart="82dp"
+        style="@style/DefaultFlightDetail"
+        android:text="10:00 AM" />
+
+    <TextView
+        android:id="@+id/price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="196dp"
+        style="@style/DefaultFlightDetailTitle"
+        android:text="Price" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="122dp"
+        android:layout_marginStart="196dp"
+        style="@style/DefaultFlightDetail"
+        android:text="$200" />
+
+    <TextView
+        android:id="@+id/flight_number_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="262dp"
+        style="@style/DefaultFlightDetailTitle"
+        android:text="Number" />
+
+    <TextView
+        android:id="@+id/flight_number"
+        style="@style/DefaultFlightDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="262dp"
+        android:layout_marginTop="122dp"
+        android:text="1234" />
+
+</RelativeLayout>

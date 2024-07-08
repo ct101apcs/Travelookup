@@ -175,7 +175,7 @@
                 android:layout_height="36dp"
                 android:src="@drawable/ic_child"
                 android:contentDescription="@string/child_icon"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="36dp"
                 android:layout_marginEnd="8dp" />
 
             <EditText
@@ -189,7 +189,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_pet"
                 android:contentDescription="@string/pet_icon"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="36dp"
                 android:layout_marginEnd="8dp" />
 
             <EditText
@@ -203,7 +203,7 @@
                 android:layout_height="24dp"
                 android:src="@drawable/ic_luggage"
                 android:contentDescription="@string/luggage_icon"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="36dp"
                 android:layout_marginEnd="8dp" />
 
             <EditText

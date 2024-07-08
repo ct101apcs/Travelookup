@@ -41,7 +41,7 @@ class AppUtils {
             val notificationRecieved: String = "📥"
         }
 
-        fun ReadJSONFromAssets(context: Context, path: String): String {
+        fun readJSONFromAssets(context: Context, path: String): String {
             val identifier = "[ReadJSON]"
             try {
                 val file = context.assets.open("$path")

@@ -28,6 +28,22 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="DefaultFlightDetailTitle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/holo_blue_dark</item>
+        <item name="android:font">@font/poppins_black</item>
+    </style>
+
+    <style name="DefaultFlightDetail" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:font">@font/poppins_black</item>
+    </style>
+
     <style name="DefaultTitle" parent="TextAppearance.AppCompat.Headline">
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>

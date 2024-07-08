@@ -30,9 +30,7 @@ class TransportBookingActivity : AppCompatActivity() {
     private var childCount: Int = 0
     private var petCount: Int = 0
     private var luggageCount: Int = 0
-
     private var rbString = "Economy or Business"
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,12 +42,12 @@ class TransportBookingActivity : AppCompatActivity() {
         val toLocation = findViewById<AutoCompleteTextView>(R.id.toLocation)
         val swapButton = findViewById<ImageButton>(R.id.swapButton)
 
-        val airportJsonString =  AppUtils.ReadJSONFromAssets(this, "airports.json")
+        val airportJsonString =  AppUtils.readJSONFromAssets(this, "airports.json")
         val airportList : List<Pair<String,String>> = getAirportCitiesAndCodes(airportJsonString)
         val airportNameList = mutableListOf<String>()
 
         airportList.forEachIndexed() { index, airport ->
-            airportNameList.add(airport.first + " (" + airport.second +')')
+            airportNameList.add(airport.first + " (" + airport.second + ")")
         }
 
         val airportNameArray = airportNameList.toTypedArray()
@@ -68,8 +66,37 @@ class TransportBookingActivity : AppCompatActivity() {
 
         bookingSearchButton.setOnClickListener {
             Toast.makeText(this, "Search for booking", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, FlightBookingActivity::class.java))
-            finish()
+            when {
+                fromLocation.text.isEmpty() -> {
+                    Toast.makeText(this, "Please enter origin location", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+                toLocation.text.isEmpty() -> {
+                    Toast.makeText(this, "Please enter destination location", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+            }
+
+            originLocation = fromLocation.text.toString()
+            destinationLocation = toLocation.text.toString()
+
+            if (transportType == "Plane"){
+                val intent = Intent(this, FlightBookingActivity::class.java)
+                intent.putExtra("originLocation", originLocation)
+                intent.putExtra("destinationLocation", destinationLocation)
+                intent.putExtra("departureDate", departureDateString)
+                intent.putExtra("returnDate", returnDateString)
+                intent.putExtra("transportType", transportType)
+                intent.putExtra("passengerCount", passengerCount)
+                intent.putExtra("childCount", childCount)
+                intent.putExtra("petCount", petCount)
+                intent.putExtra("luggageCount", luggageCount)
+                intent.putExtra("class", rbString)
+                startActivity(intent)
+            }
+            else{
+                Toast.makeText(this, "Transport type not supported", Toast.LENGTH_SHORT).show()
+            }
         }
 
         backButton.setOnClickListener {
@@ -122,7 +149,7 @@ class TransportBookingActivity : AppCompatActivity() {
                 { view, year, month, dayOfMonth ->
                     val selectedDate = "$dayOfMonth/${month + 1}/$year"
                     returnDate.text = selectedDate
-                    returnDateString = selectedDate
+//                    returnDateString = selectedDate
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
